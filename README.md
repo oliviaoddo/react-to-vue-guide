@@ -6,7 +6,9 @@ I have been developing in React for so long that it has become second nature. I 
 
 So I decided to develop a little cheat sheet/guide for myself, and I hope you find it useful too!
 
+---
 ### Looping through data to render multiple components
+
 
 **React**
 ```
@@ -19,7 +21,7 @@ So I decided to develop a little cheat sheet/guide for myself, and I hope you fi
 ```
  <table-row v-for="(member, index) in members" :key="member.id" :member="member" :gray="index % 2 !== 0" />
 ```
-
+---
 ### Conditionally rendering a component
 
 **React**
@@ -33,7 +35,7 @@ So I decided to develop a little cheat sheet/guide for myself, and I hope you fi
 ```
 <icon v-if="recent" icon="dot"/>
 ```
-
+---
 ### On Click Event
 
 **React**
@@ -67,3 +69,24 @@ export default {
 }
 </script>
 ```
+---
+### Conditionally applying a class
+
+**React**
+```
+<Toggle className={this.state.open ? 'open' : null} />
+```
+
+**Vue**
+```
+<toggle :class="{open}" />  // using es6 or :class="{open: open}" the class open will be applied depending on the value of open
+
+...
+
+data: function() {
+  return {
+    open: false
+  }
+},
+```
+___
