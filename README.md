@@ -1,4 +1,4 @@
-### React to Vue Guide
+## React to Vue Guide
 
 I have been developing in React for so long that it has become second nature. I recently started working for a new company and we are developing the web application in Vue. I took a few Vue courses and read the docs but I am always asking myself: 
 
@@ -6,7 +6,7 @@ I have been developing in React for so long that it has become second nature. I 
 
 So I decided to develop a little cheat sheet/guide for myself, and I hope you find it useful too!
 
-#### Looping through data to render multiple components
+### Looping through data to render multiple components
 
 **React**
 ```
@@ -20,7 +20,7 @@ So I decided to develop a little cheat sheet/guide for myself, and I hope you fi
  <table-row v-for="(member, index) in members" :key="member.id" :member="member" :gray="index % 2 !== 0" />
 ```
 
-#### Conditionally rendering a component
+### Conditionally rendering a component
 
 **React**
 
@@ -32,4 +32,38 @@ So I decided to develop a little cheat sheet/guide for myself, and I hope you fi
 
 ```
 <icon v-if="recent" icon="dot"/>
+```
+
+### On Click Event
+
+**React**
+```
+ handleClick = () => {
+    console.log('Button Click!');
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Click Me
+      </button>
+    );
+  }
+```
+
+**Vue**
+```
+<template>
+	<button @click="onClick">Click Me</button>
+</template>
+<script>
+export default {
+  name: 'MyButton',
+  methods: {
+    onClick() {
+      console.log('Button Click!');
+    }
+  }
+}
+</script>
 ```
